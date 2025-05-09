@@ -148,8 +148,8 @@ server <- function(input, output,session) {
       p <- input$p
       sens <- input$sens
       spec <- input$spec
-      pos.mc.wt <- input$FP
-      neg.mc.wt <- input$FN
+      pos.mc.wt <- input$FN
+      neg.mc.wt <- input$FP
       reps <- 100
       
       # Create Simulated Data Set
@@ -210,8 +210,8 @@ server <- function(input, output,session) {
     axis(1,at=c(0,5,10,15,20,25,30,35,40,45,50),labels=round(mc.wts.rates$neg.misclass.rate*100,digits=1),line=3,cex.axis=1.5)
     axis(2,at=seq(from=0.0,to=1,by=0.1),cex.axis=1.5,las=2)
     mtext('Comparator Misclassification rate (%)',side=1,line=6,cex=1.5)
-    mtext('FP rate:',1,line=0.5,at=-3.5,cex=1.5)
-    mtext('FN rate:',1,line=3.5,at=-3.5,cex=1.5)
+    mtext('FN rate:',1,line=0.5,at=-3.5,cex=1.5)
+    mtext('FP rate:',1,line=3.5,at=-3.5,cex=1.5)
     for (lvl in seq(from=0.0,to=1,by=0.1)) {abline(h=lvl,lty=2,xpd=F)} # horiz grid lines
     pcs = c(0,5,10,15,20,25,30,35,40,45,50)
     metrics =  c("AUC","Sensitivity","Specificity","Pos Pred Value","Neg Pred Value") #
